@@ -1,0 +1,144 @@
+---
+title: Configuration and Customization
+description: Learn how to tailor your Janek Unon space with settings for branding, permissions, and integrations to fit your project's needs.
+---
+
+## Overview
+
+Customize your Janek Unon documentation space to match your project's identity and workflow. Adjust space settings, define user roles, apply branding colors like `#3B82F6`, and connect integrations seamlessly. These options ensure your documentation fits your team's needs perfectly.
+
+<Columns cols={2}>
+  <Card title="Quick Start" icon="settings" href="#space-settings">
+    Configure basics in minutes.
+  </Card>
+  <Card title="Advanced Branding" icon="palette" href="#branding">
+    Match your brand colors.
+  </Card>
+  <Card title="Permissions" icon="shield" href="#permissions">
+    Control access levels.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Connect your tools.
+  </Card>
+</Columns>
+
+## Space Settings
+
+Access space settings from the admin dashboard. Follow these steps to update your configuration.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="settings">
+    Click your profile icon in the top-right corner, then select `Space Settings`.
+  </Step>
+  <Step title="Update General Info" icon="edit">
+    Enter your space name, description, and default language.
+  </Step>
+  <Step title="Save Changes" icon="save">
+    Click `Apply` to persist your updates. Changes take effect immediately.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable version history in space settings to track all changes over time.
+</Callout>
+
+## User Roles and Permissions
+
+Define roles to manage access. Janek Unon supports four core roles: Admin, Editor, Viewer, and Guest.
+
+| Role     | Read   | Write  | Admin  | Description                          |
+|----------|--------|--------|--------|--------------------------------------|
+| Admin    | ✅     | ✅     | ✅     | Full control over space and users.   |
+| Editor   | ✅     | ✅     | ❌     | Edit documents and settings.         |
+| Viewer   | ✅     | ❌     | ❌     | Read-only access to content.         |
+| Guest    | ✅     | ❌     | ❌     | Limited public access.               |
+
+Assign roles via the `Members` tab in space settings.
+
+## Branding with Colors
+
+Apply your brand colors directly in the branding panel. Use the primary color `#3B82F6` for accents.
+
+<Tabs>
+  <Tab title="CSS Variables" icon="code">
+    Update your theme with these variables.
+
+    <CodeGroup tabs="CSS,SCSS">
+```css
+:root {
+  --primary-color: #3B82F6;
+  --secondary-color: #1E40AF;
+  --accent-color: #60A5FA;
+}
+```
+```scss
+$primary: #3B82F6;
+$secondary: #1E40AF;
+
+:root {
+  --primary-color: #{$primary};
+}
+```
+    </CodeGroup>
+  </Tab>
+  <Tab title="JSON Config" icon="database">
+    For programmatic setup, use this JSON structure.
+
+````json
+{
+  "branding": {
+    "primary": "#3B82F6",
+    "logo": "https://your-domain.com/logo.svg",
+    "favicon": "https://your-domain.com/favicon.ico"
+  }
+}
+````
+  </Tab>
+</Tabs>
+
+## Integration Options
+
+Connect external services to enhance your space. Choose from popular options below.
+
+<ExpandableGroup>
+  <Expandable title="GitHub Integration" default-open="true">
+    Sync repositories for automatic documentation updates.
+
+    ```bash
+    # Add GitHub webhook
+    curl -X POST https://api.github.com/repos/your-org/janek-unon/hooks \
+      -H "Authorization: token YOUR_GITHUB_TOKEN" \
+      -d '{"url": "https://your-janek-unon-space.com/webhook"}'
+    ```
+  </Expandable>
+  <Expandable title="Slack Notifications">
+    Receive alerts for document changes.
+
+    Set `SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK` in your environment variables.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="alert">
+  Test integrations in a staging space first to avoid disruptions.
+</Callout>
+
+## Advanced Configuration
+
+For custom setups, edit the `config.json` file.
+
+```json
+{
+  "permissions": {
+    "defaultRole": "viewer",
+    "requireAuth": true
+  },
+  "integrations": {
+    "github": {
+      "enabled": true,
+      "repo": "your-org/janek-unon"
+    }
+  }
+}
+```
+
+Restart your space after changes. Use environment variables for sensitive data like `YOUR_API_KEY`.

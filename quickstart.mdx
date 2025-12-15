@@ -1,0 +1,116 @@
+---
+title: Quickstart Guide
+description: Get started with Janek Unon by setting up your account and creating your first documentation space in just a few steps.
+---
+
+## Overview
+
+Janek Unon provides a complete documentation platform where you manage spaces, organize Markdown files, and collaborate with your team. Follow these steps to create your account, set up your initial space, add documents, and navigate the interface. You complete the setup in under five minutes.
+
+<Callout kind="tip">
+  Bookmark your dashboard after sign-up. You access all spaces from there.
+</Callout>
+
+## Create Your Account
+
+Sign up using your preferred method. Janek Unon supports multiple authentication options for quick onboarding.
+
+<Tabs>
+  <Tab title="Email" icon="mail">
+    Visit `https://janek-unon.com/signup` and enter your email address and password.
+    
+    Verify your email via the confirmation link sent to your inbox.
+  </Tab>
+  
+  <Tab title="GitHub" icon="github">
+    Click "Sign up with GitHub" on the login page.
+    
+    Authorize Janek Unon to access your public repositories (read-only).
+  </Tab>
+  
+  <Tab title="Google" icon="search">
+    Select "Sign up with Google" and approve the connection.
+    
+    You land directly on the dashboard.
+  </Tab>
+</Tabs>
+
+## Set Up Your Initial Space
+
+Once logged in, create your first documentation space.
+
+<Steps>
+  <Step title="Create Space" icon="folder-plus">
+    Click the "New Space" button in the top-right corner of your dashboard.
+    
+    Enter a name like "Project Docs" and select a visibility: public, private, or team.
+  </Step>
+  
+  <Step title="Configure Settings" icon="settings">
+    Choose a brand color (e.g., `#3B82F6` for blue theme).
+    
+    Enable features like search indexing and version history.
+  </Step>
+  
+  <Step title="Save and Enter" icon="check-circle">
+    Click "Create Space". You enter the empty space overview.
+  </Step>
+</Steps>
+
+## Add Your First Document
+
+Populate your space with content. Start with a Markdown file.
+
+<CodeGroup tabs="Dashboard,CLI">
+  ```markdown
+  # Welcome to Project Docs
+  
+  This space contains all technical documentation.
+  
+  ## Quick Links
+  - [API Reference](/api)
+  - [Changelog](/changelog)
+  ```
+  
+  ```bash
+  # Install CLI (optional)
+  npm install -g @janek-unon/cli
+  
+  # Create and push document
+  janek-unon create welcome.md --space "Project Docs"
+  # Edit welcome.md with content above, then:
+  janek-unon push welcome.md
+  ```
+</CodeGroup>
+
+<Callout kind="success">
+  Documents auto-render as rich MDX pages with components like Steps and Tabs.
+</Callout>
+
+## Explore the Interface
+
+Discover key areas with these feature cards.
+
+<Columns cols={3}>
+  <Card title="Dashboard" icon="layout" href="/dashboard">
+    View all your spaces and recent activity.
+  </Card>
+  
+  <Card title="Editor" icon="edit-3" href="/editor">
+    Write Markdown with live preview and component autocomplete.
+  </Card>
+  
+  <Card title="Settings" icon="sliders" href="/settings">
+    Manage users, themes, and integrations.
+  </Card>
+</Columns>
+
+## Next Steps
+
+Customize your space further:
+
+<Expandable title="Advanced Navigation Tips" default-open="false">
+  Use the sidebar for tree-view navigation. Search with `Cmd/Ctrl + K`. Preview changes before publishing.
+</Expandable>
+
+You now have a fully functional documentation space. Invite team members via the Settings panel to collaborate.

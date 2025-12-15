@@ -1,0 +1,173 @@
+---
+title: Changelog
+description: A record of updates, new features, and improvements to Janek Unon to keep you informed about the latest changes.
+---
+
+## Changelog Overview
+
+Stay current with Janek Unon releases. You access the latest features, security fixes, and performance improvements here. Review changes by version to understand impacts on your projects.
+
+<Callout kind="info">
+  Check the <code>CHANGELOG.md</code> file in your project root for full details, or subscribe to release notifications on GitHub.
+</Callout>
+
+## Recent Releases
+
+Review the three most recent versions below. Each entry details new features, improvements, bug fixes, and migration steps.
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documents
+- Introduced customizable dashboards with drag-and-drop widgets
+
+## Improvements
+
+- Enhanced search performance by `>40%` for large repositories
+- Optimized mobile responsiveness across all views
+
+## Bug Fixes
+
+- Fixed intermittent sync failures during high-load scenarios
+- Resolved keyboard navigation issues in editor mode
+
+To upgrade:
+
+```bash
+npm install janek-unon@latest
+```
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated AI-powered code suggestions
+- Added version history rollback with one-click restore
+
+## Bug Fixes
+
+- Patched authentication token expiration handling
+- Corrected file upload limits exceeding `100MB`
+
+## Migration Notes
+
+Update your config:
+
+```javascript
+// Old
+const config = { apiKey: 'YOUR_API_KEY' };
+
+// New
+const config = { 
+  apiKey: 'YOUR_API_KEY',
+  enableAI: true 
+};
+```
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Removed legacy `v1` API endpoints; migrate to `v2`
+- Default encryption now requires explicit opt-out
+
+## New Features
+
+- Multi-factor authentication support
+- Plugin system for custom extensions
+
+## Bug Fixes
+
+- Fixed cross-browser rendering inconsistencies
+
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to upgrade Janek Unon safely.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your projects:
+    
+    ```bash
+    janek-unon export --all > backup.json
+    ```
+  </Step>
+  
+  <Step title="Install Latest" icon="download">
+    Update via your package manager.
+    
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm uninstall janek-unon
+        npm install janek-unon@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```bash
+        yarn remove janek-unon
+        yarn add janek-unon@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  
+  <Step title="Verify" icon="check-circle">
+    Run tests:
+    
+    ```bash
+    npm run test
+    janek-unon verify --config config.json
+    ```
+  </Step>
+</Steps>
+
+## Quick Access
+
+Navigate to key areas quickly.
+
+<Columns cols={3}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/janek-unon/releases" target="_blank">
+    Download assets and view full changelogs.
+  </Card>
+  
+  <Card title="Migration Guide" icon="book-open" href="/docs/migration">
+    Step-by-step upgrade paths.
+  </Card>
+  
+  <Card title="API Changes" icon="code" href="/docs/api/changes">
+    Review endpoint updates.
+  </Card>
+</Columns>
+
+## Upcoming Features
+
+<ExpandableGroup>
+  <Expandable title="v1.4.0 Preview" default-open="false">
+    Plan to include:
+    
+    - Native desktop app
+    - Advanced analytics dashboard
+    - Zero-config cloud sync
+  </Expandable>
+  
+  <Expandable title="Community Requests">
+    Track popular issues:
+    | Feature | Votes | Status |
+    |---------|-------|--------|
+    | Offline mode | 150 | Planned |
+    | Team permissions | 89 | In Progress |
+    | Export to PDF | 45 | Backlog |
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Suggest features via GitHub issues. You help shape Janek Unon's roadmap.
+</Callout>

@@ -1,0 +1,114 @@
+---
+title: Welcome to Janek Unon Documentation
+description: An overview of Janek Unon, a default documentation space designed to help you organize and manage all your project documentation efficiently.
+---
+
+## What is Janek Unon
+
+Janek Unon provides a flexible documentation space where you organize and manage project docs. You create structured pages, embed code examples, and customize layouts to fit your needs. This default space supports MDX for rich content like interactive components and diagrams.
+
+<Callout kind="info">
+Janek Unon uses MDX, so you combine Markdown with JSX components for dynamic docs.
+</Callout>
+
+## Key Benefits
+
+You gain efficiency with these core advantages:
+
+<Columns cols={3}>
+  <Card title="Organized Structure" icon="layout" href="/docs/structure">
+    Build hierarchical pages with navigation that scales as your project grows.
+  </Card>
+  <Card title="Rich Components" icon="components" href="/docs/components">
+    Embed interactive elements like tabs, steps, and code groups directly in your docs.
+  </Card>
+  <Card title="Easy Customization" icon="paint-bucket" href="/docs/customize">
+    Tailor themes and branding with your colors, such as `#3B82F6`.
+  </Card>
+</Columns>
+
+## Getting Started
+
+Follow these steps to set up your first documentation site:
+
+<Steps>
+  <Step title="Install Dependencies" icon="download">
+    Use your preferred package manager to install the core package.
+
+    <CodeGroup tabs="npm,yarn,pnpm">
+      ```bash
+      npm install janek-unon mdx-docs
+      ```
+      ```bash
+      yarn add janek-unon mdx-docs
+      ```
+      ```bash
+      pnpm add janek-unon mdx-docs
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Configure Theme" icon="settings">
+    Update your `next.config.js` or equivalent to set the brand color.
+
+    ```javascript
+    const config = {
+      theme: {
+        colors: {
+          primary: '#3B82F6'
+        }
+      }
+    };
+    ```
+  </Step>
+  <Step title="Create Your First Page" icon="file-text">
+    Add `introduction.mdx` in your docs folder and start writing.
+  </Step>
+</Steps>
+
+## Documentation Management Overview
+
+Manage your docs across platforms with these tailored approaches:
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Host your repo on GitHub and deploy previews automatically.
+
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial docs"
+    git push origin main
+    ```
+  </Tab>
+  <Tab title="Vercel" icon="zap">
+    Connect your repo to Vercel for instant deployments.
+
+    1. Log in to Vercel.
+    2. Import your GitHub repo.
+    3. Set build command to `npm run build`.
+  </Tab>
+  <Tab title="Netlify" icon="cloud">
+    Drag your repo or connect via OAuth for continuous deployment.
+  </Tab>
+</Tabs>
+
+## Brand and Customization
+
+Customize Janek Unon to match your brand. Set the primary color to `#3B82F6` in your theme config for a blue accent.
+
+<Expandable title="Advanced Theme Config" default-open="false">
+  Override CSS variables for full control:
+
+  ```css
+  :root {
+    --color-primary: #3B82F6;
+    --color-primary-hover: #2563EB;
+  }
+  ```
+</Expandable>
+
+<Callout kind="tip">
+Test customizations in development mode with `npm run dev` to preview changes live.
+</Callout>
+
+You now have a complete overview. Explore linked pages for deeper dives into structure and components.
