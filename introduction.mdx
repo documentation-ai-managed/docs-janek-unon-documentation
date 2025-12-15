@@ -1,28 +1,31 @@
 ---
-title: Welcome to Janek Unon Documentation
-description: An overview of Janek Unon, a default documentation space designed to help you organize and manage all your project documentation efficiently.
+title: Welcome to Janek Unon Documentation2
+description: >-
+  An overview of Janek Unon, a default documentation space designed to help you
+  organize and manage all your project documentation efficiently.
 ---
-
 ## What is Janek Unon
 
 Janek Unon provides a flexible documentation space where you organize and manage project docs. You create structured pages, embed code examples, and customize layouts to fit your needs. This default space supports MDX for rich content like interactive components and diagrams.
 
-<Callout kind="info">
-Janek Unon uses MDX, so you combine Markdown with JSX components for dynamic docs.
+<Callout kind="info" collapsed="false">
+  Janek Unon uses MDX, so you combine Markdown with JSX components for dynamic docs.
 </Callout>
 
 ## Key Benefits
 
 You gain efficiency with these core advantages:
 
-<Columns cols={3}>
-  <Card title="Organized Structure" icon="layout" href="/docs/structure">
+<Columns cols="3">
+  <Card title="Organized Structure" href="/docs/structure" icon="layout" horizontal="false">
     Build hierarchical pages with navigation that scales as your project grows.
   </Card>
-  <Card title="Rich Components" icon="components" href="/docs/components">
+
+  <Card title="Rich Components" href="/docs/components" icon="components" horizontal="false">
     Embed interactive elements like tabs, steps, and code groups directly in your docs.
   </Card>
-  <Card title="Easy Customization" icon="paint-bucket" href="/docs/customize">
+
+  <Card title="Easy Customization" href="/docs/customize" icon="paint-bucket" horizontal="false">
     Tailor themes and branding with your colors, such as `#3B82F6`.
   </Card>
 </Columns>
@@ -32,22 +35,25 @@ You gain efficiency with these core advantages:
 Follow these steps to set up your first documentation site:
 
 <Steps>
-  <Step title="Install Dependencies" icon="download">
+  <Step title="Install Dependencies" icon="download" title-type="p">
     Use your preferred package manager to install the core package.
 
-    <CodeGroup tabs="npm,yarn,pnpm">
+    <CodeGroup show-lines="true" tabs={[]}>
       ```bash
       npm install janek-unon mdx-docs
       ```
+
       ```bash
       yarn add janek-unon mdx-docs
       ```
+
       ```bash
       pnpm add janek-unon mdx-docs
       ```
     </CodeGroup>
   </Step>
-  <Step title="Configure Theme" icon="settings">
+
+  <Step title="Configure Theme" icon="settings" title-type="p">
     Update your `next.config.js` or equivalent to set the brand color.
 
     ```javascript
@@ -60,7 +66,8 @@ Follow these steps to set up your first documentation site:
     };
     ```
   </Step>
-  <Step title="Create Your First Page" icon="file-text">
+
+  <Step title="Create Your First Page" icon="file-text" title-type="p">
     Add `introduction.mdx` in your docs folder and start writing.
   </Step>
 </Steps>
@@ -80,13 +87,17 @@ Manage your docs across platforms with these tailored approaches:
     git push origin main
     ```
   </Tab>
+
   <Tab title="Vercel" icon="zap">
     Connect your repo to Vercel for instant deployments.
 
     1. Log in to Vercel.
+
     2. Import your GitHub repo.
+
     3. Set build command to `npm run build`.
   </Tab>
+
   <Tab title="Netlify" icon="cloud">
     Drag your repo or connect via OAuth for continuous deployment.
   </Tab>
@@ -107,8 +118,8 @@ Customize Janek Unon to match your brand. Set the primary color to `#3B82F6` in 
   ```
 </Expandable>
 
-<Callout kind="tip">
-Test customizations in development mode with `npm run dev` to preview changes live.
+<Callout kind="tip" collapsed="false">
+  Test customizations in development mode with `npm run dev` to preview changes live.
 </Callout>
 
 You now have a complete overview. Explore linked pages for deeper dives into structure and components.
